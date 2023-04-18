@@ -1,8 +1,12 @@
 {
   "pages": [
     {
-      "id": "Page1",
+      "id": "Log in",
       "isDefault": true
+    },
+    {
+      "id": "Writer Dashboard",
+      "isDefault": false
     }
   ],
   "viewMode": false,
