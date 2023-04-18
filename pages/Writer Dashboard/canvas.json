@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 650,
+          "bottomRow": 630,
           "containerStyle": "none",
           "snapRows": 74,
           "parentRowSpace": 1,
@@ -30,7 +30,7 @@
               "borderColor": "#E0DEDE",
               "isVisibleDownload": true,
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 9,
+              "topRow": 7,
               "isSortable": true,
               "type": "TABLE_WIDGET_V2",
               "inlineEditingSaveOption": "ROW_LEVEL",
@@ -62,6 +62,30 @@
                 },
                 {
                   "key": "primaryColumns.id.computedValue"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.borderRadius"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.boxShadow"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveButtonColor"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.discardBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.status.cellBackground"
                 }
               ],
               "needsHeightForContent": true,
@@ -101,8 +125,8 @@
                 }
               },
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "columnUpdatedAt": 1681838896306,
-              "originalBottomRow": 65,
+              "columnUpdatedAt": 1681843687164,
+              "originalBottomRow": 66,
               "defaultSelectedRowIndices": [
                 0
               ],
@@ -114,24 +138,73 @@
                 "category",
                 "description",
                 "lastUpdated",
-                "id"
+                "customColumn1",
+                "id",
+                "EditActions1"
               ],
               "dynamicPropertyPathList": [
                 {
                   "key": "primaryColumns.id.isCellVisible"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.status.onOptionChange"
+                },
+                {
+                  "key": "primaryColumns.title.onSubmit"
+                },
+                {
+                  "key": "primaryColumns.category.onSubmit"
+                },
+                {
+                  "key": "primaryColumns.description.onSubmit"
+                },
+                {
+                  "key": "primaryColumns.status.cellBackground"
                 }
               ],
               "displayName": "Table",
-              "bottomRow": 65,
+              "bottomRow": 63,
               "columnWidthMap": {
                 "task": 245,
                 "step": 70,
-                "status": 85
+                "status": 142,
+                "customColumn1": 100
               },
               "parentRowSpace": 10,
               "hideCard": false,
               "parentColumnSpace": 12.75,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
+                },
+                {
+                  "key": "primaryColumns.status.onOptionChange"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.onDiscard"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.onSave"
+                },
+                {
+                  "key": "primaryColumns.title.onSubmit"
+                },
+                {
+                  "key": "primaryColumns.category.onSubmit"
+                },
+                {
+                  "key": "primaryColumns.description.onSubmit"
+                }
+              ],
               "borderWidth": "1",
               "primaryColumns": {
                 "status": {
@@ -142,20 +215,24 @@
                   "alias": "status",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
-                  "columnType": "text",
+                  "columnType": "select",
                   "textSize": "0.875rem",
                   "enableFilter": true,
                   "enableSort": true,
                   "isVisible": true,
                   "isCellVisible": true,
-                  "isCellEditable": false,
+                  "isCellEditable": true,
                   "isDerived": false,
-                  "label": "status",
+                  "label": "Status",
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"status\"]))}}",
                   "validation": {},
                   "sticky": "",
                   "labelColor": "#FFFFFF",
-                  "isEditable": false
+                  "isEditable": true,
+                  "selectOptions": "[{\"label\": \"draft\", \"value\": \"draft\"}, \n{\"label\": \"active\", \"value\": \"active\"}, {\"label\": \"archived\", \"value\": \"archived\"}]",
+                  "placeholderText": "currentRow[\"status\"]",
+                  "onOptionChange": "{{Update_quiz_payload.updateQuizPayload(\"status\", Table1.triggeredRow.status)}}",
+                  "cellBackground": "{{Table1.processedTableData.map((currentRow, currentIndex) => (  (function() {\n    if (currentRow.status == 'active') {\n        return \"#86efac\";\n    } else if (currentRow.status == 'draft') {\n        return \"#fef08a\";\n    } else if (currentRow.status == 'archived') {\n\t\t\t\treturn '#fecaca';\n\t\t}\n})() ))}}"
                 },
                 "category": {
                   "allowCellWrapping": false,
@@ -172,16 +249,17 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "category",
+                  "label": "Category",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"category\"]))}}",
                   "sticky": "",
-                  "validation": {}
+                  "validation": {},
+                  "onSubmit": "{{Update_quiz_payload.updateQuizPayload(\"category\", Table1.triggeredRow.category)}}"
                 },
                 "description": {
                   "allowCellWrapping": false,
@@ -198,16 +276,17 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "description",
+                  "label": "Description",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"description\"]))}}",
                   "sticky": "",
-                  "validation": {}
+                  "validation": {},
+                  "onSubmit": "{{Update_quiz_payload.updateQuizPayload(\"description\", Table1.triggeredRow.description)}}"
                 },
                 "lastUpdated": {
                   "allowCellWrapping": false,
@@ -228,7 +307,7 @@
                   "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "lastUpdated",
+                  "label": "Last Updated",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"lastUpdated\"]))}}",
@@ -250,16 +329,17 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "title",
+                  "label": "Title",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"title\"]))}}",
                   "sticky": "",
-                  "validation": {}
+                  "validation": {},
+                  "onSubmit": "{{Update_quiz_payload.updateQuizPayload(\"title\", Table1.triggeredRow.title)}}"
                 },
                 "id": {
                   "allowCellWrapping": false,
@@ -280,7 +360,7 @@
                   "isDisabled": false,
                   "isCellEditable": false,
                   "isEditable": false,
-                  "isCellVisible": "false",
+                  "isCellVisible": "true",
                   "isDerived": false,
                   "label": "id",
                   "isSaveVisible": true,
@@ -289,14 +369,86 @@
                   "sticky": "",
                   "validation": {},
                   "cellBackground": ""
+                },
+                "customColumn1": {
+                  "allowCellWrapping": false,
+                  "index": 6,
+                  "width": 150,
+                  "originalId": "customColumn1",
+                  "id": "customColumn1",
+                  "alias": "Delete",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "button",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Delete",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "sticky": "",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "labelColor": "#FFFFFF",
+                  "buttonColor": "#dc2626",
+                  "borderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
+                  "customAlias": "",
+                  "buttonLabel": "Delete",
+                  "onClick": "{{Delete_quiz.deleteQuiz()}}"
+                },
+                "EditActions1": {
+                  "allowCellWrapping": false,
+                  "index": 7,
+                  "width": 150,
+                  "originalId": "EditActions1",
+                  "id": "EditActions1",
+                  "alias": "EditActions1",
+                  "columnType": "editActions",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Save / Discard",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "sticky": "right",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "saveIconAlign": "left",
+                  "discardIconAlign": "left",
+                  "saveActionLabel": "Save",
+                  "discardActionLabel": "Discard",
+                  "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "discardButtonColor": "#F22B2B",
+                  "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardButtonVariant": "TERTIARY",
+                  "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
+                  "onDiscard": "",
+                  "onSave": "{{Update_quiz.updateQuiz()}}"
                 }
               },
               "key": "ntazdab1vl",
               "canFreezeColumn": true,
               "isDeprecated": false,
-              "rightColumn": 63,
+              "rightColumn": 61,
               "textSize": "0.875rem",
               "widgetId": "9v58goaf9i",
+              "allowAddNewRow": false,
               "minWidth": 450,
               "tableData": "{{Get_writer_quizzes.data}}",
               "label": "Data",
@@ -306,7 +458,7 @@
               "horizontalAlignment": "LEFT",
               "isVisibleSearch": true,
               "responsiveBehavior": "fill",
-              "originalTopRow": 9,
+              "originalTopRow": 10,
               "isVisiblePagination": true,
               "verticalAlignment": "CENTER"
             },
@@ -362,7 +514,7 @@
               "originalTopRow": 2,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
-              "originalBottomRow": 6,
+              "originalBottomRow": 7,
               "fontSize": "1rem",
               "minDynamicHeight": 4
             }

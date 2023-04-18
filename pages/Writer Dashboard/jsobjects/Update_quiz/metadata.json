@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Update_quiz",
+    "pageId": "Writer Dashboard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Writer Dashboard_Update_quiz",
+  "deleted": false,
+  "gitSyncId": "643d95e49894ca6b2568257e_643eed2c7c730b4504503eaf"
+}
