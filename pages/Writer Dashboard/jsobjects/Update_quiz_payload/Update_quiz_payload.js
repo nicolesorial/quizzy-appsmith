@@ -6,6 +6,5 @@ export default {
 		}
 		payload[label] = value
 		storeValue("updatePayload", payload)
-		Table1.updatedRowIndices = []
 	}
 }

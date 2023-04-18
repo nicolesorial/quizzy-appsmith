@@ -7,6 +7,10 @@
     {
       "id": "Writer Dashboard",
       "isDefault": false
+    },
+    {
+      "id": "Writer Quiz Editor",
+      "isDefault": false
     }
   ],
   "viewMode": false,

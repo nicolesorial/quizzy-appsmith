@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "ExitQuizEditor",
+    "pageId": "Writer Quiz Editor",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Writer Quiz Editor_ExitQuizEditor",
+  "deleted": false,
+  "gitSyncId": "643d95e49894ca6b2568257e_643f071b7c730b4504503ee3"
+}

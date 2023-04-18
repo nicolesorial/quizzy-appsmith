@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "Update_quiz_id",
+    "name": "Create_new_answer_option",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/w/quizzes/{{Table1.triggeredRow.id}}/update"
+        "url": "web:4000/w/questions/{{QuestionsTable.selectedRow.id}}/options"
       },
       "invalids": [],
       "messages": [],
@@ -16,7 +16,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Writer Dashboard",
+    "pageId": "Writer Quiz Editor",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -29,9 +29,9 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "{{appsmith.store.updatePayload}}",
+      "body": "{\n\t\"optionText\": {{AnswerOptionsTable.newRow.label}},\n\t\"correct\": {{AnswerOptionsTable.newRow.correct}},\n\t\"questionId\": {{QuestionsTable.selectedRow.id}}\n}",
       "bodyFormData": [],
-      "httpMethod": "PUT",
+      "httpMethod": "POST",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -55,15 +55,16 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "Table1.triggeredRow.id",
-      "appsmith.store.updatePayload"
+      "AnswerOptionsTable.newRow.correct",
+      "AnswerOptionsTable.newRow.label",
+      "QuestionsTable.selectedRow.id"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Writer Dashboard_Update_quiz_id",
+  "id": "Writer Quiz Editor_Create_new_answer_option",
   "deleted": false,
-  "gitSyncId": "643d95e49894ca6b2568257e_643ee2ed7c730b4504503e97"
+  "gitSyncId": "643d95e49894ca6b2568257e_643f1ca87c730b4504503f20"
 }

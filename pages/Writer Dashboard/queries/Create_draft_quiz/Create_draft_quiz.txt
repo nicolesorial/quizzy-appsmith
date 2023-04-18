@@ -1,0 +1,9 @@
+{
+	"title": {{TitleInput.inputText}},
+	"description": {{DescriptionInput.inputText}},
+	"category": {{CategoryInput.inputText}},
+	"status": "draft",
+	"writerId": {{appsmith.store.writer_id}},
+	"numOffenses": 0,
+	"url": "tempurl.com"
+}

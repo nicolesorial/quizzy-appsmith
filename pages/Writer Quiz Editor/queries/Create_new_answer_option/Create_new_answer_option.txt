@@ -1,0 +1,5 @@
+{
+	"optionText": {{AnswerOptionsTable.newRow.label}},
+	"correct": {{AnswerOptionsTable.newRow.correct}},
+	"questionId": {{QuestionsTable.selectedRow.id}}
+}
