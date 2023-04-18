@@ -1,0 +1,5 @@
+{
+	"type": {{NewTypeInput.selectedOptionValue}},
+	"questionText": {{NewQuestionInput.inputText}},
+	"responseOptions": []
+}
