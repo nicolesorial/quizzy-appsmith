@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "Writer_Dashboard_Navigator",
+    "pageId": "Log in",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "Log in_Writer_Dashboard_Navigator",
+  "deleted": false,
+  "gitSyncId": "643d95e49894ca6b2568257e_643ec9b03512e40f70a4a4ba"
+}

@@ -105,7 +105,14 @@
               "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( Get_all_writers.data[0].value))(Select1.options, Select1.serverSideFiltering) }}",
               "animateLoading": true,
               "parentColumnSpace": 20.0625,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onOptionChange"
+                },
+                {
+                  "key": "onDropdownOpen"
+                }
+              ],
               "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
@@ -137,20 +144,23 @@
               "isVisible": true,
               "version": 1,
               "parentId": "0",
+              "onDropdownOpen": "",
               "labelAlignment": "left",
               "renderMode": "CANVAS",
               "isLoading": false,
               "responsiveBehavior": "fill",
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
               "maxDynamicHeight": 9000,
+              "onOptionChange": "{{storeValue('writer_id',Select1.selectedOptionValue)}}",
               "minDynamicHeight": 4
             },
             {
               "resetFormOnClick": false,
               "boxShadow": "none",
               "widgetName": "Button1",
-              "onClick": "{{navigateTo('Writer Dashboard', {}, 'SAME_WINDOW')}}",
+              "onClick": "{{Writer_Dashboard_Navigator.setWriterId()}}",
               "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "dynamicPropertyPathList": [],
               "displayName": "Button",
               "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
               "searchTags": [
