@@ -235,7 +235,7 @@
               "needsHeightForContent": true,
               "leftColumn": 3,
               "delimiter": ",",
-              "defaultSelectedRowIndex": "0",
+              "defaultSelectedRowIndex": "-1",
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisibleFilters": true,
               "isVisible": true,
@@ -293,7 +293,11 @@
               "parentRowSpace": 10,
               "hideCard": false,
               "parentColumnSpace": 15.265625,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onRowSelected"
+                }
+              ],
               "borderWidth": "1",
               "primaryColumns": {
                 "dateAdded": {
@@ -453,6 +457,7 @@
                   "validation": {}
                 }
               },
+              "onRowSelected": "{{on_select_question.onSelectQuestion()}}",
               "key": "rbkrp0bpqp",
               "canFreezeColumn": true,
               "isDeprecated": false,
@@ -904,7 +909,7 @@
               "dynamicHeight": "AUTO_HEIGHT",
               "widgetId": "qw7jqzfqhj",
               "minWidth": 450,
-              "isVisible": "{{QuestionsTable.selectedRowIndex >= 0}}",
+              "isVisible": "{{QuestionsTable.tableData.length > 0}}",
               "parentId": "0",
               "renderMode": "CANVAS",
               "isLoading": false,
@@ -1072,7 +1077,7 @@
                       "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
                       "topRow": 6,
                       "isSortable": true,
-                      "defaultNewRow": "",
+                      "defaultNewRow": "{\"correct\": false}",
                       "type": "TABLE_WIDGET_V2",
                       "inlineEditingSaveOption": "ROW_LEVEL",
                       "animateLoading": true,
@@ -1085,9 +1090,6 @@
                         },
                         {
                           "key": "boxShadow"
-                        },
-                        {
-                          "key": "tableData"
                         },
                         {
                           "key": "primaryColumns.correct.computedValue"
@@ -1118,6 +1120,9 @@
                         },
                         {
                           "key": "primaryColumns.customColumn1.boxShadow"
+                        },
+                        {
+                          "key": "tableData"
                         }
                       ],
                       "needsHeightForContent": true,
@@ -1176,9 +1181,6 @@
                         },
                         {
                           "key": "primaryColumns.EditActions1.isDiscardDisabled"
-                        },
-                        {
-                          "key": "onAddNewRowSave"
                         }
                       ],
                       "displayName": "Table",
@@ -1508,7 +1510,7 @@
                     {
                       "boxShadow": "none",
                       "widgetName": "IconButton1",
-                      "onClick": "{{closeModal('Modal1')}}",
+                      "onClick": "{{closeModal('NewQuestionModal')}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Icon Button",
                       "iconSVG": "/static/media/icon.1a0c634ac75f9fa6b6ae7a8df882a3ba.svg",
@@ -1521,6 +1523,11 @@
                       "type": "ICON_BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onClick"
+                        }
+                      ],
                       "leftColumn": 58,
                       "dynamicBindingPathList": [
                         {
@@ -1803,8 +1810,8 @@
                                 "number",
                                 "textarea"
                               ],
-                              "topRow": 1,
-                              "bottomRow": 8,
+                              "topRow": 0,
+                              "bottomRow": 7,
                               "parentRowSpace": 10,
                               "labelWidth": 5,
                               "autoFocus": false,
