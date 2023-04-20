@@ -83,7 +83,7 @@
             {
               "boxShadow": "none",
               "widgetName": "Select1",
-              "isFilterable": true,
+              "isFilterable": false,
               "dynamicPropertyPathList": [
                 {
                   "key": "options"
