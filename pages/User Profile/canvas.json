@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 510,
+          "bottomRow": 590,
           "containerStyle": "none",
           "snapRows": 55,
           "parentRowSpace": 1,
@@ -149,15 +149,6 @@
               "animateLoading": true,
               "dynamicBindingPathList": [
                 {
-                  "key": "primaryColumns.step.computedValue"
-                },
-                {
-                  "key": "primaryColumns.task.computedValue"
-                },
-                {
-                  "key": "primaryColumns.status.computedValue"
-                },
-                {
                   "key": "accentColor"
                 },
                 {
@@ -167,16 +158,10 @@
                   "key": "boxShadow"
                 },
                 {
-                  "key": "primaryColumns.scores.computedValue"
-                },
-                {
-                  "key": "primaryColumns.date_taken.computedValue"
-                },
-                {
-                  "key": "primaryColumns.times_taken.computedValue"
-                },
-                {
                   "key": "tableData"
+                },
+                {
+                  "key": "primaryColumns.title.computedValue"
                 }
               ],
               "needsHeightForContent": true,
@@ -215,7 +200,7 @@
                 }
               },
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "columnUpdatedAt": 1681869649167,
+              "columnUpdatedAt": 1682023881905,
               "originalBottomRow": 48,
               "defaultSelectedRowIndices": [
                 0
@@ -223,12 +208,7 @@
               "widgetName": "profile_table_data",
               "defaultPageSize": 0,
               "columnOrder": [
-                "step",
-                "task",
-                "status",
-                "scores",
-                "date_taken",
-                "times_taken"
+                "title"
               ],
               "dynamicPropertyPathList": [],
               "displayName": "Table",
@@ -244,79 +224,13 @@
               "dynamicTriggerPathList": [],
               "borderWidth": "1",
               "primaryColumns": {
-                "step": {
+                "title": {
+                  "allowCellWrapping": false,
                   "index": 0,
                   "width": 150,
-                  "id": "step",
-                  "originalId": "step",
-                  "alias": "step",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
-                  "columnType": "text",
-                  "textSize": "0.875rem",
-                  "enableFilter": true,
-                  "enableSort": true,
-                  "isVisible": true,
-                  "isCellVisible": true,
-                  "isCellEditable": false,
-                  "isDerived": false,
-                  "label": "",
-                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"step\"]))}}",
-                  "validation": {},
-                  "sticky": "",
-                  "labelColor": "#FFFFFF"
-                },
-                "task": {
-                  "index": 1,
-                  "width": 150,
-                  "id": "task",
-                  "originalId": "task",
-                  "alias": "task",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
-                  "columnType": "text",
-                  "textSize": "0.875rem",
-                  "enableFilter": true,
-                  "enableSort": true,
-                  "isVisible": true,
-                  "isCellVisible": true,
-                  "isCellEditable": false,
-                  "isDerived": false,
-                  "label": "Title",
-                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"task\"]))}}",
-                  "validation": {},
-                  "sticky": "",
-                  "labelColor": "#FFFFFF"
-                },
-                "status": {
-                  "index": 2,
-                  "width": 150,
-                  "id": "status",
-                  "originalId": "status",
-                  "alias": "status",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
-                  "columnType": "text",
-                  "textSize": "0.875rem",
-                  "enableFilter": true,
-                  "enableSort": true,
-                  "isVisible": true,
-                  "isCellVisible": true,
-                  "isCellEditable": false,
-                  "isDerived": false,
-                  "label": "Status",
-                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"status\"]))}}",
-                  "validation": {},
-                  "sticky": "",
-                  "labelColor": "#FFFFFF"
-                },
-                "scores": {
-                  "allowCellWrapping": false,
-                  "index": 3,
-                  "width": 150,
-                  "originalId": "scores",
-                  "id": "scores",
-                  "alias": "scores",
+                  "originalId": "title",
+                  "id": "title",
+                  "alias": "title",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
                   "columnType": "text",
@@ -331,68 +245,10 @@
                   "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": false,
-                  "label": "scores",
+                  "label": "title",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"scores\"]))}}",
-                  "sticky": "",
-                  "validation": {},
-                  "cellBackground": ""
-                },
-                "date_taken": {
-                  "allowCellWrapping": false,
-                  "index": 4,
-                  "width": 150,
-                  "originalId": "date-taken",
-                  "id": "date_taken",
-                  "alias": "date-taken",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
-                  "columnType": "text",
-                  "textColor": "",
-                  "textSize": "0.875rem",
-                  "fontStyle": "",
-                  "enableFilter": true,
-                  "enableSort": true,
-                  "isVisible": true,
-                  "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
-                  "isCellVisible": true,
-                  "isDerived": false,
-                  "label": "date-taken",
-                  "isSaveVisible": true,
-                  "isDiscardVisible": true,
-                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"date-taken\"]))}}",
-                  "sticky": "",
-                  "validation": {},
-                  "cellBackground": ""
-                },
-                "times_taken": {
-                  "allowCellWrapping": false,
-                  "index": 5,
-                  "width": 150,
-                  "originalId": "times-taken",
-                  "id": "times_taken",
-                  "alias": "times-taken",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
-                  "columnType": "text",
-                  "textColor": "",
-                  "textSize": "0.875rem",
-                  "fontStyle": "",
-                  "enableFilter": true,
-                  "enableSort": true,
-                  "isVisible": true,
-                  "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
-                  "isCellVisible": true,
-                  "isDerived": false,
-                  "label": "times-taken,",
-                  "isSaveVisible": true,
-                  "isDiscardVisible": true,
-                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"times-taken\"]))}}",
+                  "computedValue": "{{profile_table_data.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"title\"]))}}",
                   "sticky": "",
                   "validation": {},
                   "cellBackground": ""
@@ -405,7 +261,7 @@
               "textSize": "0.875rem",
               "widgetId": "edxp3vpz7x",
               "minWidth": 450,
-              "tableData": "{{get_history/history.data}}",
+              "tableData": "{{get_quiz_history.data}}",
               "label": "Data",
               "searchKey": "",
               "parentId": "0",
@@ -476,7 +332,18 @@
             }
           ]
         },
-        "layoutOnLoadActions": [],
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "User Profile_get_quiz_history",
+              "name": "get_quiz_history",
+              "confirmBeforeExecute": false,
+              "pluginType": "API",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
         "id": "User Profile",

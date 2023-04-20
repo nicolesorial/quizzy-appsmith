@@ -1,0 +1,8 @@
+{
+	"id": 1,
+	"username": {{appsmith.store.username}},
+	"FName": {{appsmith.store.FName}},
+	"LName":{{appsmith.store.LName}},
+	"numOffenses":0,
+	"email":{{appsmith.store.email}}
+}

@@ -2,12 +2,12 @@
   "pluginType": "API",
   "pluginId": "restapi-plugin",
   "unpublishedAction": {
-    "name": "Delete_quiz_by_id",
+    "name": "post_user_info",
     "datasource": {
       "name": "DEFAULT_REST_DATASOURCE",
       "pluginId": "restapi-plugin",
       "datasourceConfiguration": {
-        "url": "web:4000/w/quizzes/{{appsmith.store.to_delete}}/update"
+        "url": "web:4000/u/users"
       },
       "invalids": [],
       "messages": [],
@@ -16,7 +16,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": "Writer Dashboard",
+    "pageId": "User Profile",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -29,9 +29,9 @@
       ],
       "encodeParamsToggle": true,
       "queryParameters": [],
-      "body": "",
+      "body": "{\n\t\"id\": 1,\n\t\"username\": {{appsmith.store.username}},\n\t\"FName\": {{appsmith.store.FName}},\n\t\"LName\":{{appsmith.store.LName}},\n\t\"numOffenses\":0,\n\t\"email\":{{appsmith.store.email}}\n}",
       "bodyFormData": [],
-      "httpMethod": "DELETE",
+      "httpMethod": "POST",
       "selfReferencingDataPaths": [],
       "pluginSpecifiedTemplates": [
         {
@@ -45,21 +45,24 @@
     "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
-        "key": "datasourceUrl"
+        "key": "body"
       }
     ],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "appsmith.store.to_delete"
+      "appsmith.store.FName",
+      "appsmith.store.LName",
+      "appsmith.store.email",
+      "appsmith.store.username"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": "Writer Dashboard_Delete_quiz_by_id",
+  "id": "User Profile_post_user_info",
   "deleted": false,
-  "gitSyncId": "643d95e49894ca6b2568257e_643ed5943512e40f70a4a4c8"
+  "gitSyncId": "643d99c5ef59483b0a09919f_64419ee5db707439e7e7ad07"
 }
